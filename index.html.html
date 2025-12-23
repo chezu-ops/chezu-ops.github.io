@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>about you</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Georgia", serif;
+      background: url("t (1).gif") center/cover no-repeat fixed;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      overflow: hidden;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .intro {
+      font-size: 1.4rem;
+      margin-bottom: 30px;
+      transition: opacity 1s ease;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background: #f5eeef;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      color: #050202;
+      transition: 0.3s;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      background: #b1acad;
+    }
+
+    .letter {
+      display: none;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      padding: 30px 30px 30px 70px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 500px;
+      max-height: 600px;
+      overflow-y: auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      position: relative;
+      font-family: "Courier New", monospace;
+      white-space: pre-wrap;
+      margin-bottom: 20px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .letter::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0px;
+      height: 50%;
+      background-image: radial-gradient(circle, rgba(30,30,47,0.7) 6px, transparent 7px);
+      background-size: 25px 40px;
+      background-repeat: repeat-y;
+      background-position: center;
+    }
+
+    .signature {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 180px;
+      opacity: 0.9;
+      transform: rotate(-2deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="intro" id="introText">
+    I hope you read this, even if it's too late.
+  </div>
+
+  <button class="btn" id="startBtn">Read it</button>
+
+  <!-- First Letter -->
+  <div class="letter" id="letterBox1">
+    <p id="typedText1"></p>
+  </div>
+
+  <!-- Second Letter -->
+  <div class="letter" id="letterBox2">
+    <p id="typedText2"></p>
+  </div>
+
+  <!-- Background Music -->
+  <audio id="backgroundMusic" loop>
+    <source src="ear.mp4" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Letters Texts
+    const letter1 = `Hellooo, old hag Nikka. Sorry if late na, busy masyado sa school.
+But anyhow, happppiiii birthdayyyyy sauuuu!
+
+This is probably your worst year, and alam ko din na nahihirapan ka rn and madaming iniisip. Just know na nandito lang ako palagi. I mean, dito na ako palagi. You can always count on me if may kailangan or may di na kayang gawin. Dito lang ako. You can always rant to me if may nangyari or may nagbo-bother sayo. Kaya mo yan, kakayanin natin yan.
+
+Technically, dapat sayo to, but it’s more like about us hehe.
+`;
+
+    const letter2 = `Tbh, when I first saw you, I never thought na magkakagusto ako sayo. Cry baby ka kase dati, papansin ka, so na-curious na din ako sayo and I tried to talk to you back then. Well, I already told you this, but yon na nga that time na naglilinis tayo sa loob, tayo lang dalawa haha. I freaking fell over heels sayo, papansin na ngiti yan, but yon nga, that didn’t last long and you suddenly disappeared. At that time, di ko pa alam kung anong reason, until now na sinabi mo. Huhuh. I’m sorry if wala ako doon para i-defend ka sa papansin na batang yon, but yon nga, di kita nakita noong grade 4 haha. Pinagmamalaki pa kita dati kung sino crush ko since mga bata pa naman, and yan talaga ang mga topic nila.
+
+Then noong grade 5, nagrant ako kay Kieth about sa crush-crush nayan since magka-love team yan sila. April may complex pa nga eh, kasama si Ivan hahaha. Di ko ini-expect na pinsan mo siya not until may pina-kita siya na picture nyo. Apaka unexpected, and I was utterly shocked na nalaman yon…
+
+Then noong grade 6, bigla ka na lang sumulpot na parang ewan. Di ko alam gagawin ko, di ko alam kung anong sasabihin ko since alam nila yung tinutukoy ko ay ikaw, but probably nakalimutan na din nila, but not me. Dahil don, I never got a chance na maki-usap sayo. Tanga diba? Nandun na, di pa kita kina usap. Tas noong wala ka mukhang bibig, ikaw, then nagka-close kayo ni Ivan. I mean, nagka-crush siya sayo, nawalan na talaga akong chance non, and nag-distance na lang ako para sa inyo haha. Dedma amp kaka-disappoint kase pinagsisihan ko yan noong nag-graduate tayo ng grade 6.
+
+Kasi alam ko naman na di na kita makikita since ibang school na, and yon na nga, I never saw you talaga. Even after that, di pa din kita makalimutan. Kahit ilang years na, di ka pa din nawawala sa isip ko. Papansin ka no? I already tried magka-gf and all, pero di pa din talaga mawala, and all I get is freaking headache, stress, and sadness.
+
+Din yon nga nag-first move ako sayo, papansin ang putik tanda ko pa yon AAHAHAHA. I never regret that sh, kala ko dedemahin mo lang ako eh… and here we are finally meeting after 7 years.
+
+Gaga, first time natin yon mag-usap in person AHAHAAHA. Di ko pa din alam gagawin ko, taena na nag-wait tayo ng 7 years para lang sa ilang minuto makausap ka in person AHAHHA, but it’s worth it. I’m glad na nangyari yon, and I’m thankful na naalala mo pa din ako after so many years.
+
+Yonnnn langgggg apaka random ko no AHAHA soeeyyy sana ma gets mo story ko sau.
+`;
+
+    let index = 0;
+
+    const startBtn = document.getElementById("startBtn");
+    const letterBox1 = document.getElementById("letterBox1");
+    const letterBox2 = document.getElementById("letterBox2");
+    const typedText1 = document.getElementById("typedText1");
+    const typedText2 = document.getElementById("typedText2");
+    const music = document.getElementById("backgroundMusic");
+
+    startBtn.addEventListener("click", () => {
+      document.getElementById("introText").style.opacity = "0";
+      startBtn.style.display = "none";
+      letterBox1.style.display = "block";
+      music.play();
+      typeLetter(letter1, typedText1, () => {
+        const nextBtn = document.createElement("button");
+        nextBtn.textContent = "Next";
+        nextBtn.className = "btn";
+        nextBtn.onclick = () => {
+          letterBox1.style.display = "none";
+          letterBox2.style.display = "block";
+          index = 0;
+          typeLetter(letter2, typedText2);
+          nextBtn.remove();
+        };
+        document.body.appendChild(nextBtn);
+      });
+    });
+
+    function typeLetter(text, element, callback) {
+      index = 0;
+      element.innerHTML = "";
+      function type() {
+        if (index < text.length) {
+          element.innerHTML += text.charAt(index) === "\n" ? "<br>" : text.charAt(index);
+          index++;
+          setTimeout(type, 40);
+        } else if (callback) {
+          callback();
+        }
+      }
+      type();
+    }
+  </script>
+</body>
+</html>
